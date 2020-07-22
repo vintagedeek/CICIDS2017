@@ -2,6 +2,7 @@
 1. For initial setup downsample or upsample each class so that the non BENIGN classes have 8000 entries. Downsample the BENIGN class to have 40000 entries. 
 2. Break up resulting test set (in dataframe) into train, validation, test set. Test is 15% of the total data, validation is 15% of the remaining and the rest is training data
 3. Logistic regression produces an accuracy of 0.9336 and F1 score of 0.9338 on the validation set
+4. Not using the test set till later in the project; all intermediate accuracy calculations will be on the validation data
 
 7/20/2020
 1. The CICIDS 2017 data is from:  https://www.unb.ca/cic/datasets/ids-2017.html

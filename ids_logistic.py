@@ -5,11 +5,9 @@ import numpy as np
 import pandas as pd
 
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import f1_score
 from sklearn.preprocessing import StandardScaler
 
-import ids_utils as iu
+from ids_utils import *
 
 def ids_logistic():
 	"""
@@ -21,8 +19,8 @@ def ids_logistic():
 		None
 	"""
 
-	df = iu.ids_load_df_from_csv (iu.outdir, iu.file)
-	X_train, X_val, X_test, y_train, y_val, y_test = iu.ids_train_test_split(df)
+	df = ids_load_df_from_csv (outdir, file)
+	X_train, X_val, X_test, y_train, y_val, y_test = ids_split(df)
 
 	scaler = StandardScaler()
 	X_train = scaler.fit_transform(X_train)
@@ -38,12 +36,6 @@ def ids_logistic():
 
 	y_pred = logreg.predict(X_val)
 	
-	print('Accuracy of logistic regression classifier on val set: {:.4f}'.format(logreg.score(X_val, y_val)))
-	
-	cm = confusion_matrix(y_val, y_pred)
-	print(cm)
-	
-	f1 = f1_score(y_val, y_pred, average='weighted')
-	print('F1 score of logistic regression classifier on val set: {:.4f}'.format(f1))
+	ids_metrics(y_val, y_pred)
 
 ids_logistic()

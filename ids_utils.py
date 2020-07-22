@@ -123,6 +123,9 @@ label_names = {
  'DDoS' : 12,
 }
 
+ids_features = 76
+ids_classes = 13
+
 def ids_combine(indir, outdir, file):
 	"""
 	Combine all csv files to produce a single csv file 
@@ -219,7 +222,7 @@ def ids_load_df_from_csv(dir, file):
 
 	return df
 
-def ids_train_test_split(df):
+def ids_split(df):
 	"""
 	Input:
 		Dataframe that has columns of covariates followed by a column of labels
@@ -242,6 +245,20 @@ def ids_train_test_split(df):
 	print ("X_test.shape", X_test.shape, "y_test.shape", y_test.shape)
 
 	return X_train, X_val, X_test, y_train, y_val, y_test
+
+def ids_metrics(y_actual, y_pred):
+	from sklearn.metrics import accuracy_score
+	from sklearn.metrics import confusion_matrix
+	from sklearn.metrics import f1_score
+
+	acc = accuracy_score (y_actual, y_pred)
+	print('Accuracy of classifier: {:.4f}'.format(acc))
+
+	f1 = f1_score(y_actual, y_pred, average='macro')
+	print('F1 score: {:.4f}'.format(f1))
+
+	cm = confusion_matrix (y_actual, y_pred)
+	print(cm)
 
 def ids_check_version():
 	""" Prints Python version in use """
