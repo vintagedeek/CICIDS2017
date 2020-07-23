@@ -12,6 +12,8 @@ from torch.utils.data import TensorDataset, DataLoader
 
 from ids_utils import *
 
+### Re the architecture, it looks like you have a hidden layer (self.linear1). Just flagging in case you intended to first train with no hidden layer.
+
 # Neural network matches the one in the part2-nn problem
 class SimpleNet(nn.Module):
     # Initialize the layers
