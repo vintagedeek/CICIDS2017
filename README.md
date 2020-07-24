@@ -1,5 +1,11 @@
 # CICIDS2017
- 
+
+### cicids2017_2020_07_23_97_val_acc.ipynb (97.1394% val accuracy)
+- Val accuracy 97.1394% at epoch 19
+- Standardized features, 1 hidden layer (26 neurons)
+- Linear, Sigmoid, BatchNorm1d, Linear, Sigmoid, 
+- Cross Entropy Cost function
+
 #### cicids2017_2020_07_23.ipynb
 - Best run: validation accuracy 80%
 - Fully connected neural network with one hidden layer (26 hidden neurons)
