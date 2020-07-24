@@ -1,10 +1,20 @@
 # CICIDS2017
 
-### cicids2017_2020_07_23_97_val_acc.ipynb (97.1394% val accuracy)
+## cicids2017_best_run.ipynb (97.7837% val accuracy)
+- Val accuracy 97.7837 at epoch 18 (ran for 35, but think 20 epochs better for performance).
+- Standardized features, 1 hidden layer (26 neurons)
+- Linear, ReLU, BatchNorm1d, Linear
+- Cross Entropy Cost Function
+- lr=0.004, decaying at 0.5 every 10 epochs
+- bs=8
+
+#### cicids2017_2020_07_23_97_val_acc.ipynb (97.1394% val accuracy)
 - Val accuracy 97.1394% at epoch 19
 - Standardized features, 1 hidden layer (26 neurons)
 - Linear, Sigmoid, BatchNorm1d, Linear, Sigmoid, 
 - Cross Entropy Cost function
+- lr=0.004, decaying at 0.5 every 10 epochs
+- bs=8
 
 #### cicids2017_2020_07_23.ipynb
 - Best run: validation accuracy 80%
