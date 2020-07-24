@@ -1,4 +1,5 @@
 # CICIDS2017
+- hat tip to @r-dube for best learning rate/batch size and insights re: data prep and neural network architecture.
 
 ## cicids2017_best_run.ipynb (97.7837% val accuracy)
 - Val accuracy 97.7837 at epoch 18 (ran for 35, but think 20 epochs better for performance).
